@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note APP</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+  <!-- navbar section  -->
+
+  <nav>
+     <div class="input-holder">
+      <img src="../images/search.png"> 
+      <input type="text" class="search-input" placeholder="Type to search" />
+      </div>
+
+      <div class="profile-box">
+        <span>Hi' Demo</span>
+
+        <span class="profile-img">
+          <img src="">
+        </span>
+
+      </div>
+
+    </nav>
+
+
+    <!-- content box  -->
+    <div class="two-container">
+
+    <!-- Left Side section  -->
+      <section class="left-side">
+
+        <div class="Add-new">
+          <a href="/">Add New Note</a>
+        </div>
+
+    <!-- Card section  -->
+      </section>
+
+
+    <!-- Right Side section  -->
+
+      <section class="right-side">
+
+          <div class="Note-writing-area">
+
+            <form action="/update/<%= updateData._id %>" method="post">
+  
+              <textarea name="title" id="title-heading"><%=updateData.title %></textarea>
+              <br> <br>
+              <textarea name="Description" id="Description"><%=updateData.Description %></textarea>
+        
+              <input type="submit" id="submit-btn" value="Update">
+
+              </form>
+  
+          </div>
+
+
+      </section>
+
+    </div>
+
+
+  </div>
+
+
+  <script src="../javascripts/main.js"></script>
+  
+</body>
+</html>

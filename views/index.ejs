@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note APP</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+  <!-- navbar section  -->
+
+  <nav>
+     <div class="input-holder">
+      <img src="../images/search.png"> 
+      <input type="text" class="search-input" placeholder="Type to search" />
+      </div>
+
+      <div class="profile-box">
+        <span>Hi' Demo</span>
+        <span class="profile-img">
+          <img src="">
+        </span>
+      </div>
+    </nav>
+
+
+    <!-- content box  -->
+    <div class="two-container">
+
+    <!-- Left Side section  -->
+      <section class="left-side">
+
+        <div class="Add-new">
+          <a href="#">Add New Note</a>
+        </div>
+
+    <!-- Card section  -->
+
+    <% createData.forEach(function (data) { %>
+        <div class="card">
+          <div class="dot-btn">
+            <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown(event, '<%= data._id %>')">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+
+            <div id="myDropdown-<%= data._id %>" class="dropdown-content">
+              <a href="/delete/<%= data._id %>">Delete</a>
+              <a href="/update/<%= data._id %>">Update</a>
+              <a href="/viewData/<%= data._id %>">View</a>
+        
+
+            </div>
+          </div>
+
+
+        <div class="title-desc">
+          <h4 class="title"><%= data.title.substring(0, 15) +"..." %></h4>
+          <p class="description"><%= data.Description.substring(0, 25) +"..." %></p>
+          </div>
+
+        </div>
+
+        <% }) %>
+
+      </section>
+
+
+    <!-- Right Side section  -->
+
+      <section class="right-side">
+
+        <div class="Note-writing-area">
+
+          <form action="/" method="post" placeholder="Hey Guys! Start Writig Here">
+
+            <textarea name="title" id="title-heading" placeholder="Title...."></textarea>
+
+            <br> <br>
+
+            <textarea name="Description" id="Description" placeholder="Hey Guys! Start Writig Here...."></textarea>
+      
+            <input type="submit" id="submit-btn">
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+
+  <script src="../javascripts/main.js"></script>
+  
+</body>
+</html>
